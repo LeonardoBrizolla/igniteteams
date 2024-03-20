@@ -6,12 +6,11 @@ import { ButtonIconTypeStyleProps, Container, Icon } from "./styles";
 type Props = TouchableOpacityProps & {
   icon: keyof typeof MaterialIcons.glyphMap;
   type?: ButtonIconTypeStyleProps;
-  onRemove?: () => void;
 }
 
-export function ButtonIcon({ icon, type = "PRIMARY", onRemove, ...rest }: Props) {
+export function ButtonIcon({ icon, type = "PRIMARY", ...rest }: Props) {
   return (
-    <Container {...rest} onPress={onRemove}>
+    <Container {...rest}>
       <Icon name={icon} type={type} />
     </Container>
   )
